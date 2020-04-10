@@ -1,11 +1,9 @@
-# GettingandCleaningData-Project
+Getting and Cleaning Data Project
 
-==================================================================
-Consolidated / Averaged Human Activity Recognition Using Smartphones Dataset
+Consolidated / Averaged Human Activity Recognition Using Smartphone Dataset
 Version 1.0
-==================================================================
-BDO, April 2020
-==================================================================
+
+BDO April 2020
 
 Starting with Samsung Galaxy S accelerometer data provided at the following location in several txt documnents, the data ia compiled into a single data frame and a consolidated tidy data frame is compiled.
 
