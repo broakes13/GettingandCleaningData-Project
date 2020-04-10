@@ -1,5 +1,5 @@
 ## Getting and Cleaning Data Course Project
-## April 10 2020
+## April 2020
 
 ## Script to complete the following from supplied data extracted from
 ## Samsung Galaxy S smartphones:
@@ -66,10 +66,15 @@ meanstdord<-meanstd[order(meanstd$Subject,meanstd$Activity),]
 #split based on subject and apply mean to all data columns
 subsplit<-split(meanstdord,meanstdord$Subject)
 subjmean<-sapply(subsplit, function(x) {colMeans(x[,c(3:81)])})
+subjmean<-data.frame(subjmean)
+
+#Modify names to clearly indicate they are each of the 30 subjects
+for (i in 1:length(subjmean)) {names(subjmean)[i]<-paste("Subj",i)}
 
 #split based on activity and apply mean to all data columns
 actsplit<-split(meanstdord,meanstdord$Activity)
 actmean<-sapply(actsplit, function(x) {colMeans(x[,c(3:81)])})
+actmean<-data.frame(actmean)
 
 #combine the activity and subject means into a final "tidy" dataframe
-actsubjdf <- data.frame(cbind(actmean,subjmean))
+actsubjdf <- cbind(actmean,subjmean)
